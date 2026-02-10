@@ -1,3 +1,14 @@
+error id: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/MainController.java:java/util/List#size().
+file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/MainController.java
+empty definition using pc, found symbol in pc: java/util/List#size().
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 3974
+uri: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/MainController.java
+text:
+```scala
 package org.example.urbanmap.controlador;
 
 import javafx.collections.FXCollections;
@@ -23,9 +34,6 @@ import java.util.Locale;
  * Gestiona la navegación, filtros y la carga del listado de propiedades.
  */
 public class MainController {
-
-    // ─── NavBar reference ───
-    @FXML private NavBarController navBarController;
 
     // ─── Content ───
     @FXML private StackPane contentArea;
@@ -57,17 +65,6 @@ public class MainController {
     private final ImagenPropiedadController imagenController = new ImagenPropiedadController();
 
     private List<Propiedad> todasLasPropiedades = new ArrayList<>();
-    private Usuario usuarioActivo;
-
-    /**
-     * Establece el usuario activo en la aplicación y actualiza el navbar.
-     */
-    public void setUsuarioActivo(Usuario usuario) {
-        this.usuarioActivo = usuario;
-        if (navBarController != null) {
-            navBarController.setUsuario(usuario);
-        }
-    }
 
     @FXML
     public void initialize() {
@@ -131,7 +128,7 @@ public class MainController {
         header.getStyleClass().add("listing-header");
 
         TextFlow countFlow = new TextFlow();
-        Text countNum = new Text(String.valueOf(filtradas.size()));
+        Text countNum = new Text(String.valueOf(filtradas.@@size()));
         countNum.getStyleClass().add("listing-count-number");
         Text countTxt = new Text(" Propiedades en UrbanMap");
         countTxt.getStyleClass().add("listing-count-text");
@@ -438,3 +435,10 @@ public class MainController {
         );
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: java/util/List#size().

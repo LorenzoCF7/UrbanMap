@@ -1,3 +1,14 @@
+error id: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/PropiedadDetalleController.java:java/util/List#size().
+file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/PropiedadDetalleController.java
+empty definition using pc, found symbol in pc: java/util/List#size().
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 6936
+uri: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/PropiedadDetalleController.java
+text:
+```scala
 package org.example.urbanmap.controlador;
 
 import javafx.fxml.FXML;
@@ -192,7 +203,7 @@ public class PropiedadDetalleController {
                 cargarImagen(imgPrincipal, imagenes.get(0).getUrlImagen());
 
                 // Imagen secundaria 1
-                if (imagenes.size() > 1) {
+                if (imagenes.@@size() > 1) {
                     cargarImagen(imgSecundaria1, imagenes.get(1).getUrlImagen());
                 }
 
@@ -451,3 +462,10 @@ public class PropiedadDetalleController {
         }
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: java/util/List#size().

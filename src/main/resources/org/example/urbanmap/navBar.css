@@ -1,92 +1,102 @@
 /* Contenedor principal */
 .sidebar {
-    background-color: #ffffff;
-    padding: 18 18 18 18;
+    -fx-background-color: #ffffff;
+    -fx-padding: 18 18 18 18;
     -fx-spacing: 18;
-    border-color: transparent transparent transparent #1d6cff; /* línea azul izquierda */
-    border-width: 0 0 0 3;
+    -fx-border-color: transparent transparent transparent #1d6cff; /* línea azul izquierda */
+    -fx-border-width: 0 0 0 3;
 }
 
 /* Header */
-.sidebar-header { padding: 4 0 6 0; }
+.sidebar-header { -fx-padding: 4 0 6 0; }
 
 .app-icon {
-    background-color: #1d6cff;
+    -fx-background-color: #1d6cff;
     -fx-background-radius: 12;
 }
 .app-icon-glyph {
-    fill: white;
+    -fx-fill: white;
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
 }
 
-.brand-title { font-size: 18px; font-weight: 700; fill: #1f2937; }
-.brand-title-accent { font-size: 18px; font-weight: 700; fill: #1d6cff; }
+.brand-title { -fx-font-size: 18px; -fx-font-weight: 700; -fx-fill: #1f2937; }
+.brand-title-accent { -fx-font-size: 18px; -fx-font-weight: 700; -fx-fill: #1d6cff; }
 
 /* Menú */
-.menu { padding: 10 0 0 0; }
+.menu { -fx-padding: 10 0 0 0; }
 
 .nav-item {
-    background-color: transparent;
-    padding: 10 12 10 12;
+    -fx-background-color: transparent;
+    -fx-padding: 10 12 10 12;
     -fx-background-radius: 10;
     -fx-alignment: CENTER_LEFT;
     -fx-content-display: LEFT;
     -fx-graphic-text-gap: 12;
-    font-size: 13.5px;
+    -fx-font-size: 13.5px;
     -fx-text-fill: #7b8794;
-    cursor: hand;
+    -fx-cursor: hand;
 }
 
 .nav-icon {
-    fill: #7b8794;
+    -fx-fill: #7b8794;
 }
 
 /* Seleccionado */
 .nav-item:selected, .nav-item.nav-item-selected {
-    background-color: #e9f2ff;
+    -fx-background-color: #e9f2ff;
     -fx-text-fill: #1d6cff;
 }
 
 .nav-item:selected .nav-icon, .nav-icon-selected {
-    fill: #1d6cff;
+    -fx-fill: #1d6cff;
+}
+
+/* Hover */
+.nav-item:hover {
+    -fx-background-color: #f1f5f9;
 }
 
 /* Tarjeta upgrade */
 .upgrade-card {
-    background-color: #f2f7ff;
+    -fx-background-color: #f2f7ff;
     -fx-background-radius: 14;
-    padding: 14;
+    -fx-padding: 14;
     -fx-effect: dropshadow(gaussian, rgba(31,41,55,0.10), 14, 0.2, 0, 6);
 }
 
 .upgrade-title {
-    font-size: 11px;
-    font-weight: 800;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
     -fx-text-fill: #1d6cff;
 }
 
 .upgrade-text {
-    font-size: 12.5px;
+    -fx-font-size: 12.5px;
     -fx-text-fill: #6b7280;
 }
 
 .upgrade-button {
-    background-color: #1d6cff;
+    -fx-background-color: #1d6cff;
     -fx-text-fill: white;
-    font-weight: 700;
+    -fx-font-weight: 700;
     -fx-background-radius: 10;
-    padding: 10 12 10 12;
+    -fx-padding: 10 12 10 12;
+    -fx-cursor: hand;
+}
+
+.upgrade-button:hover {
+    -fx-background-color: #1558d6;
 }
 
 /* Usuario */
-.user-box { padding: 10 2 4 2; }
+.user-box { -fx-padding: 10 2 4 2; }
 
 .avatar {
-    background-color: #f6b08a;
+    -fx-background-color: #f6b08a;
     -fx-background-radius: 999;
 }
-.avatar-glyph { fill: rgba(255,255,255,0.85); }
+.avatar-glyph { -fx-fill: rgba(255,255,255,0.85); }
 
-.user-name { font-size: 13px; font-weight: 700; -fx-text-fill: #1f2937; }
-.user-subtitle { font-size: 12px; -fx-text-fill: #9aa5b1; }
+.user-name { -fx-font-size: 13px; -fx-font-weight: 700; -fx-text-fill: #1f2937; }
+.user-subtitle { -fx-font-size: 12px; -fx-text-fill: #9aa5b1; }

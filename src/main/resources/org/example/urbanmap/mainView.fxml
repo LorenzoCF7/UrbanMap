@@ -10,7 +10,7 @@
       styleClass="app-root">
 
     <!-- ═══════════════ NAVBAR (include existente) ═══════════════ -->
-    <fx:include source="navBar.fxml"/>
+    <fx:include source="navBar.fxml" fx:id="navBar"/>
 
     <!-- ═══════════════ MAIN AREA ═══════════════ -->
     <VBox HBox.hgrow="ALWAYS" styleClass="main-area">

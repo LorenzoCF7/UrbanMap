@@ -1,3 +1,14 @@
+error id: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/PropiedadDetalleController.java:java/io/IOException#
+file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/PropiedadDetalleController.java
+empty definition using pc, found symbol in pc: java/io/IOException#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 552
+uri: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/PropiedadDetalleController.java
+text:
+```scala
 package org.example.urbanmap.controlador;
 
 import javafx.fxml.FXML;
@@ -15,6 +26,7 @@ import javafx.stage.Stage;
 import org.example.urbanmap.HelloApplication;
 import org.example.urbanmap.modelo.*;
 
+import java.io.@@IOException;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
@@ -106,7 +118,7 @@ public class PropiedadDetalleController {
 
         // ─── Badges ───
         lblEstado.setText(propiedad.isDisponible() ? "EN VENTA" : "VENDIDO");
-        lblEstado.getStyleClass().removeAll("badge-sale", "badge-sold");
+        lblEstado.getStyleClass().clear();
         lblEstado.getStyleClass().add(propiedad.isDisponible() ? "badge-sale" : "badge-sold");
         lblTipoPropiedad.setText(propiedad.getTipoVivienda().toUpperCase());
 
@@ -404,7 +416,7 @@ public class PropiedadDetalleController {
             stage.setMinWidth(900);
             stage.setMinHeight(600);
             stage.show();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.err.println("Error al abrir detalle de propiedad: " + e.getMessage());
             e.printStackTrace();
         }
@@ -422,32 +434,24 @@ public class PropiedadDetalleController {
         try {
             FXMLLoader loader = new FXMLLoader(
                     HelloApplication.class.getResource("propertyDetail.fxml"));
-
-            if (loader.getLocation() == null) {
-                System.err.println("Error: No se encontró el archivo propertyDetail.fxml");
-                return;
-            }
-
             Parent root = loader.load();
+
             PropiedadDetalleController controller = loader.getController();
+            controller.setPropiedad(propiedad);
             controller.setOnVolverCallback(onVolver);
 
-            // Añadir la vista al contenedor ANTES de cargar los datos,
-            // así la estructura se muestra aunque falle la carga de datos.
             container.getChildren().clear();
             container.getChildren().add(root);
-
-            // Cargar datos de la propiedad (con su propio try-catch)
-            try {
-                controller.setPropiedad(propiedad);
-            } catch (Exception ex) {
-                System.err.println("Error al cargar datos de propiedad: " + ex.getMessage());
-                ex.printStackTrace();
-            }
-
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.err.println("Error al cargar detalle en contenedor: " + e.getMessage());
             e.printStackTrace();
         }
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: java/io/IOException#

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.urbanmap.controlador.LoginController"
+           styleClass="login-root">
+
+    <VBox alignment="CENTER" spacing="0" maxWidth="420">
+        
+        <!-- Login Card -->
+        <VBox alignment="CENTER" spacing="24" styleClass="login-card">
+            
+            <!-- Logo y título -->
+            <VBox alignment="CENTER" spacing="8">
+                <StackPane prefWidth="64" prefHeight="64" styleClass="login-icon">
+                    <Label text="🏠" style="-fx-font-size: 36px;"/>
+                </StackPane>
+                
+                <VBox alignment="CENTER" spacing="4">
+                    <Label text="UrbanMap" styleClass="login-title"/>
+                    <Label text="Sistema de Gestión Inmobiliaria" styleClass="login-subtitle"/>
+                </VBox>
+            </VBox>
+
+            <!-- Formulario -->
+            <VBox spacing="16" styleClass="login-form">
+                
+                <!-- Usuario -->
+                <VBox spacing="6">
+                    <Label text="Usuario" styleClass="login-label"/>
+                    <TextField fx:id="txtUsuario" 
+                               promptText="Ingresa tu usuario"
+                               styleClass="login-input"/>
+                </VBox>
+
+                <!-- Contraseña -->
+                <VBox spacing="6">
+                    <Label text="Contraseña" styleClass="login-label"/>
+                    <PasswordField fx:id="txtPassword" 
+                                   promptText="Ingresa tu contraseña"
+                                   styleClass="login-input"
+                                   onAction="#onLoginClick"/>
+                </VBox>
+
+                <!-- Error message -->
+                <Label fx:id="lblError" 
+                       text="" 
+                       styleClass="login-error" 
+                       wrapText="true"
+                       visible="false"
+                       managed="false"/>
+
+            </VBox>
+
+            <!-- Botón -->
+            <Button fx:id="btnLogin" 
+                    text="Iniciar Sesión" 
+                    styleClass="login-button"
+                    onAction="#onLoginClick"
+                    defaultButton="true"
+                    maxWidth="Infinity"/>
+
+            <!-- Footer -->
+            <VBox alignment="CENTER" spacing="8">
+                <Separator prefWidth="320" styleClass="login-separator"/>
+                <Label text="Usuarios de prueba: admin / admin123" 
+                       styleClass="login-hint"/>
+            </VBox>
+
+        </VBox>
+
+    </VBox>
+
+</StackPane>

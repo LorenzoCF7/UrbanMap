@@ -82,7 +82,6 @@
 .main-image-container {
     -fx-background-color: #e2e8f0;
     -fx-background-radius: 16;
-    overflow: hidden;
 }
 
 .main-image-container .image-view {
@@ -92,7 +91,6 @@
 .side-image-container {
     -fx-background-color: #e2e8f0;
     -fx-background-radius: 12;
-    overflow: hidden;
 }
 
 .photos-overlay {
@@ -120,6 +118,15 @@
 
 .badge-new {
     -fx-background-color: #10b981;
+    -fx-text-fill: white;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: 800;
+    -fx-padding: 5 14;
+    -fx-background-radius: 6;
+}
+
+.badge-sold {
+    -fx-background-color: #ef4444;
     -fx-text-fill: white;
     -fx-font-size: 11.5px;
     -fx-font-weight: 800;

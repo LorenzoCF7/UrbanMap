@@ -67,3 +67,10 @@
 2026.02.10 19:04:27 INFO  empty definition using pc, found symbol in pc: _empty_/ConexionBD# (full report at: "C:\Users\juanx\Desktop\Map\UrbanMap\.metals\.reports\metals-full\2026-02-10\r_empty-definition_19-04-23-084.md")
 2026.02.10 19:04:27 INFO  no build target found for C:\Users\juanx\Desktop\Map\UrbanMap\src\main\java\org\example\urbanmap\HelloApplication.java. Using fallback presentation compiler.
 2026.02.10 19:04:27 INFO  no build target found for C:\Users\juanx\Desktop\Map\UrbanMap\src\main\java\org\example\urbanmap\ConexionBD.java. Using fallback presentation compiler.
+2026.02.10 19:11:46 INFO  no build target found for C:\Users\juanx\Desktop\Map\UrbanMap\src\main\java\org\example\urbanmap\HelloApplication.java. Using fallback presentation compiler.
+2026.02.10 19:11:46 WARN  no build target for: C:\Users\juanx\Desktop\Map\UrbanMap\src\main\java\org\example\urbanmap\HelloApplication.java
+2026.02.10 19:11:54 WARN  no build target for: C:\Users\juanx\Desktop\Map\UrbanMap\src\main\java\org\example\urbanmap\HelloApplication.java
+2026.02.10 19:13:59 INFO  no build target found for C:\Users\juanx\Desktop\Map\UrbanMap\src\main\java\module-info.java. Using fallback presentation compiler.
+2026.02.10 19:24:05 INFO  no build target found for C:\Users\juanx\Desktop\Map\UrbanMap\src\main\java\org\example\urbanmap\controlador\PropiedadDetalleController.java. Using fallback presentation compiler.
+2026.02.10 19:24:05 INFO  no build target found for C:\Users\juanx\Desktop\Map\UrbanMap\src\main\java\org\example\urbanmap\controlador\MainController.java. Using fallback presentation compiler.
+2026.02.10 19:24:05 INFO  no build target found for C:\Users\juanx\Desktop\Map\UrbanMap\src\main\java\org\example\urbanmap\HelloApplication.java. Using fallback presentation compiler.

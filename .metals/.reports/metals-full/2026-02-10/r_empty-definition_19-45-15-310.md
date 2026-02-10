@@ -1,3 +1,14 @@
+error id: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/MainController.java:_empty_/TextField#clear#
+file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/MainController.java
+empty definition using pc, found symbol in pc: _empty_/TextField#clear#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 2758
+uri: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/MainController.java
+text:
+```scala
 package org.example.urbanmap.controlador;
 
 import javafx.collections.FXCollections;
@@ -23,9 +34,6 @@ import java.util.Locale;
  * Gestiona la navegación, filtros y la carga del listado de propiedades.
  */
 public class MainController {
-
-    // ─── NavBar reference ───
-    @FXML private NavBarController navBarController;
 
     // ─── Content ───
     @FXML private StackPane contentArea;
@@ -57,17 +65,6 @@ public class MainController {
     private final ImagenPropiedadController imagenController = new ImagenPropiedadController();
 
     private List<Propiedad> todasLasPropiedades = new ArrayList<>();
-    private Usuario usuarioActivo;
-
-    /**
-     * Establece el usuario activo en la aplicación y actualiza el navbar.
-     */
-    public void setUsuarioActivo(Usuario usuario) {
-        this.usuarioActivo = usuario;
-        if (navBarController != null) {
-            navBarController.setUsuario(usuario);
-        }
-    }
 
     @FXML
     public void initialize() {
@@ -99,7 +96,7 @@ public class MainController {
 
     @FXML
     private void onResetFiltros() {
-        txtPrecioMin.clear();
+        txtPrecioMin.@@clear();
         txtPrecioMax.clear();
         txtBuscar.clear();
         chkCasa.setSelected(false);
@@ -438,3 +435,10 @@ public class MainController {
         );
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/TextField#clear#

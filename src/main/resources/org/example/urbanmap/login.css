@@ -1,0 +1,110 @@
+/* ═══════════════════════════════════════════════════════════
+   UrbanMap – Login View Stylesheet
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Root ─── */
+.login-root {
+    -fx-background-color: #667eea;
+}
+
+/* ─── Login Card ─── */
+.login-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 20;
+    -fx-padding: 48 42;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 40, 0.15, 0, 10);
+    -fx-min-width: 420;
+    -fx-max-width: 420;
+}
+
+/* ─── Logo Icon ─── */
+.login-icon {
+    -fx-background-color: #f0f4ff;
+    -fx-background-radius: 16;
+}
+
+/* ─── Título ─── */
+.login-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0f172a;
+}
+
+.login-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+    -fx-font-weight: 500;
+}
+
+/* ─── Form ─── */
+.login-form {
+    -fx-padding: 8 0 0 0;
+}
+
+.login-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1e293b;
+}
+
+.login-input {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 14 16;
+    -fx-font-size: 14px;
+    -fx-text-fill: #0f172a;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.login-input:focused {
+    -fx-border-color: #667eea;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(102,126,234,0.2), 8, 0.1, 0, 2);
+}
+
+/* ─── Error Message ─── */
+.login-error {
+    -fx-text-fill: #ef4444;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 10 14;
+    -fx-background-color: #fee2e2;
+    -fx-background-radius: 8;
+}
+
+/* ─── Button ─── */
+.login-button {
+    -fx-background-color: #667eea;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-background-radius: 12;
+    -fx-padding: 14 24;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(102,126,234,0.4), 12, 0.3, 0, 4);
+}
+
+.login-button:hover {
+    -fx-background-color: #5568d3;
+    -fx-effect: dropshadow(gaussian, rgba(102,126,234,0.5), 16, 0.4, 0, 6);
+}
+
+.login-button:pressed {
+    -fx-background-color: #4a5bb8;
+}
+
+/* ─── Separator ─── */
+.login-separator .line {
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* ─── Hint ─── */
+.login-hint {
+    -fx-font-size: 12px;
+    -fx-text-fill: #94a3b8;
+    -fx-font-style: italic;
+}

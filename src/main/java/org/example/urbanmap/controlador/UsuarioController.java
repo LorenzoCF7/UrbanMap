@@ -141,6 +141,14 @@ public class UsuarioController {
         return null;
     }
 
+    /**
+     * Autentica un usuario con sus credenciales.
+     * Alias de validarCredenciales para mayor claridad semántica.
+     */
+    public Usuario autenticar(String nombreUsuario, String contrasena) {
+        return validarCredenciales(nombreUsuario, contrasena);
+    }
+
     private Usuario mapearUsuario(ResultSet rs) throws SQLException {
         return new Usuario(
                 rs.getInt("id_usuario"),

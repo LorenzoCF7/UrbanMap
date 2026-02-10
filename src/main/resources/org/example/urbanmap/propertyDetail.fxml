@@ -161,14 +161,14 @@
                 <!-- Price Card -->
                 <VBox spacing="6" styleClass="price-card" alignment="CENTER_RIGHT">
                     <HBox alignment="CENTER_RIGHT" spacing="4">
-                        <Label fx:id="lblPrecio" text="$0"
+                        <Label fx:id="lblPrecio" text="0 €"
                                styleClass="price-amount"/>
                         <VBox alignment="CENTER_LEFT">
                             <Label text="/ Total" styleClass="price-slash"/>
                             <Label text="Precio" styleClass="price-sublabel"/>
                         </VBox>
                     </HBox>
-                    <Label fx:id="lblHipoteca" text="Est. Hipoteca: $0/mes"
+                    <Label fx:id="lblHipoteca" text="Est. Hipoteca: 0 €/mes"
                            styleClass="mortgage-text"
                            alignment="CENTER_RIGHT" maxWidth="Infinity"/>
                 </VBox>

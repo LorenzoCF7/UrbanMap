@@ -1,3 +1,14 @@
+error id: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/PropiedadDetalleController.java:_empty_/Label#getStyleClass#removeAll#
+file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/PropiedadDetalleController.java
+empty definition using pc, found symbol in pc: _empty_/Label#getStyleClass#removeAll#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 3414
+uri: file:///C:/Users/juanx/Desktop/Map/UrbanMap/src/main/java/org/example/urbanmap/controlador/PropiedadDetalleController.java
+text:
+```scala
 package org.example.urbanmap.controlador;
 
 import javafx.fxml.FXML;
@@ -106,7 +117,7 @@ public class PropiedadDetalleController {
 
         // ─── Badges ───
         lblEstado.setText(propiedad.isDisponible() ? "EN VENTA" : "VENDIDO");
-        lblEstado.getStyleClass().removeAll("badge-sale", "badge-sold");
+        lblEstado.getStyleClass().@@removeAll("badge-sale", "badge-sold");
         lblEstado.getStyleClass().add(propiedad.isDisponible() ? "badge-sale" : "badge-sold");
         lblTipoPropiedad.setText(propiedad.getTipoVivienda().toUpperCase());
 
@@ -451,3 +462,10 @@ public class PropiedadDetalleController {
         }
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/Label#getStyleClass#removeAll#
