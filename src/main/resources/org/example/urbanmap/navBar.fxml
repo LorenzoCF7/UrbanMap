@@ -10,7 +10,7 @@
       xmlns:fx="http://javafx.com/fxml/1"
       prefWidth="260" minWidth="260" maxWidth="260"
       styleClass="sidebar"
-      stylesheets="@/css/navBar.css"
+      stylesheets="@navBar.css"
       >
 
     <!-- Top: Logo -->

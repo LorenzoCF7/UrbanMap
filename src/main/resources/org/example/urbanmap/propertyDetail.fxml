@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+            stylesheets="@propertyDetail.css"
+            styleClass="detail-scroll"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.urbanmap.controlador.PropiedadDetalleController">
+
+    <VBox styleClass="property-detail-root" spacing="24">
+        <padding>
+            <Insets top="20" right="32" bottom="32" left="32"/>
+        </padding>
+
+        <!-- ═══════════════ TOP BAR ═══════════════ -->
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-bar">
+            <Button fx:id="btnVolver" text="← Volver a resultados"
+                    styleClass="back-button" onAction="#onVolverClick"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnCompartir" text="🔗  Compartir" styleClass="action-btn" onAction="#onCompartirClick"/>
+            <Button fx:id="btnGuardar" text="♡  Guardar" styleClass="action-btn" onAction="#onGuardarClick"/>
+        </HBox>
+
+        <!-- ═══════════════ IMAGE GALLERY ═══════════════ -->
+        <HBox spacing="12" styleClass="image-gallery" prefHeight="420">
+
+            <!-- Main Image -->
+            <StackPane HBox.hgrow="ALWAYS" styleClass="main-image-container">
+                <ImageView fx:id="imgPrincipal" fitHeight="420"
+                           preserveRatio="true" pickOnBounds="true"
+                           style="-fx-cursor: hand;"/>
+
+                <!-- Badges -->
+                <VBox alignment="TOP_LEFT" StackPane.alignment="TOP_LEFT"
+                      mouseTransparent="true">
+                    <padding>
+                        <Insets top="16" left="16"/>
+                    </padding>
+                    <HBox spacing="8">
+                        <Label fx:id="lblEstado" text="EN VENTA" styleClass="badge-sale"/>
+                        <Label fx:id="lblTipoPropiedad" text="CASA" styleClass="badge-new"/>
+                    </HBox>
+                </VBox>
+            </StackPane>
+
+            <!-- Side Images -->
+            <VBox spacing="12" prefWidth="270" minWidth="270">
+                <StackPane VBox.vgrow="ALWAYS" styleClass="side-image-container">
+                    <ImageView fx:id="imgSecundaria1" fitWidth="270"
+                               preserveRatio="true" pickOnBounds="true"/>
+                </StackPane>
+                <StackPane VBox.vgrow="ALWAYS" styleClass="side-image-container"
+                           onMouseClicked="#onVerFotosClick" style="-fx-cursor: hand;">
+                    <ImageView fx:id="imgSecundaria2" fitWidth="270"
+                               preserveRatio="true" pickOnBounds="true"/>
+                    <VBox alignment="CENTER" styleClass="photos-overlay">
+                        <Label text="🖼" style="-fx-font-size: 26px;"/>
+                        <Label fx:id="lblNumFotos" text="Ver fotos"
+                               styleClass="photos-overlay-text"/>
+                    </VBox>
+                </StackPane>
+            </VBox>
+        </HBox>
+
+        <!-- ═══════════════ CONTENT AREA ═══════════════ -->
+        <HBox spacing="32">
+
+            <!-- ────── LEFT: Property Info ────── -->
+            <VBox HBox.hgrow="ALWAYS" spacing="20" styleClass="property-info">
+
+                <!-- Title -->
+                <Label fx:id="lblTitulo"
+                       text="Nombre de la propiedad"
+                       styleClass="property-title" wrapText="true"/>
+
+                <!-- Address / Location -->
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📍" styleClass="address-icon"/>
+                    <Label fx:id="lblUbicacion"
+                           text="Ubicación"
+                           styleClass="address-text"/>
+                </HBox>
+
+                <!-- Stats row -->
+                <HBox spacing="0" alignment="CENTER_LEFT" styleClass="stats-container">
+
+                    <!-- Stat 1 -->
+                    <HBox spacing="10" alignment="CENTER" styleClass="stat-item"
+                          HBox.hgrow="ALWAYS">
+                        <Label fx:id="lblStatIcon1" text="🏠" styleClass="stat-icon"/>
+                        <VBox alignment="CENTER_LEFT" spacing="2">
+                            <Label fx:id="lblStatLabel1" text="TIPO" styleClass="stat-label"/>
+                            <Label fx:id="lblStatValue1" text="-"
+                                   styleClass="stat-value"/>
+                        </VBox>
+                    </HBox>
+
+                    <Separator orientation="VERTICAL" styleClass="stat-separator"/>
+
+                    <!-- Stat 2 -->
+                    <HBox spacing="10" alignment="CENTER" styleClass="stat-item"
+                          HBox.hgrow="ALWAYS">
+                        <Label fx:id="lblStatIcon2" text="📐" styleClass="stat-icon"/>
+                        <VBox alignment="CENTER_LEFT" spacing="2">
+                            <Label fx:id="lblStatLabel2" text="DETALLE" styleClass="stat-label"/>
+                            <Label fx:id="lblStatValue2" text="-"
+                                   styleClass="stat-value"/>
+                        </VBox>
+                    </HBox>
+
+                    <Separator orientation="VERTICAL" styleClass="stat-separator"/>
+
+                    <!-- Stat 3 -->
+                    <HBox spacing="10" alignment="CENTER" styleClass="stat-item"
+                          HBox.hgrow="ALWAYS">
+                        <Label fx:id="lblStatIcon3" text="🔑" styleClass="stat-icon"/>
+                        <VBox alignment="CENTER_LEFT" spacing="2">
+                            <Label fx:id="lblStatLabel3" text="EXTRA" styleClass="stat-label"/>
+                            <Label fx:id="lblStatValue3" text="-"
+                                   styleClass="stat-value"/>
+                        </VBox>
+                    </HBox>
+
+                    <Separator orientation="VERTICAL" styleClass="stat-separator"/>
+
+                    <!-- Stat 4 -->
+                    <HBox spacing="10" alignment="CENTER" styleClass="stat-item"
+                          HBox.hgrow="ALWAYS">
+                        <Label fx:id="lblStatIcon4" text="✅" styleClass="stat-icon"/>
+                        <VBox alignment="CENTER_LEFT" spacing="2">
+                            <Label fx:id="lblStatLabel4" text="ESTADO" styleClass="stat-label"/>
+                            <Label fx:id="lblStatValue4" text="-"
+                                   styleClass="stat-value"/>
+                        </VBox>
+                    </HBox>
+                </HBox>
+
+                <!-- Description -->
+                <Separator styleClass="section-separator"/>
+
+                <VBox spacing="12" styleClass="description-section">
+                    <Label text="Descripción" styleClass="description-title"/>
+                    <Label fx:id="lblDescripcion" wrapText="true"
+                           styleClass="description-text"
+                           text="Descripción de la propiedad..."/>
+                </VBox>
+            </VBox>
+
+            <!-- ────── RIGHT: Sidebar ────── -->
+            <VBox spacing="16" minWidth="280" prefWidth="300" styleClass="sidebar-detail">
+
+                <!-- Price Card -->
+                <VBox spacing="6" styleClass="price-card" alignment="CENTER_RIGHT">
+                    <HBox alignment="CENTER_RIGHT" spacing="4">
+                        <Label fx:id="lblPrecio" text="$0"
+                               styleClass="price-amount"/>
+                        <VBox alignment="CENTER_LEFT">
+                            <Label text="/ Total" styleClass="price-slash"/>
+                            <Label text="Precio" styleClass="price-sublabel"/>
+                        </VBox>
+                    </HBox>
+                    <Label fx:id="lblHipoteca" text="Est. Hipoteca: $0/mes"
+                           styleClass="mortgage-text"
+                           alignment="CENTER_RIGHT" maxWidth="Infinity"/>
+                </VBox>
+
+                <!-- Property Info Card -->
+                <VBox spacing="12" styleClass="agent-card">
+                    <Label text="INFORMACIÓN" styleClass="agent-header"/>
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <StackPane styleClass="agent-photo-container"
+                                   prefWidth="50" prefHeight="50" minWidth="50" minHeight="50">
+                            <Label text="🏢" style="-fx-font-size: 24px;"/>
+                        </StackPane>
+                        <VBox spacing="3" HBox.hgrow="ALWAYS">
+                            <Label text="UrbanMap"
+                                   styleClass="agent-name"/>
+                            <HBox spacing="6" alignment="CENTER_LEFT">
+                                <Label text="★★★★★"
+                                       styleClass="agent-rating"/>
+                                <Label text="Inmobiliaria"
+                                       styleClass="agent-reviews"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Action Buttons -->
+                <Button fx:id="btnComprar" text="Comprar Propiedad" styleClass="btn-contact"
+                        maxWidth="Infinity" prefHeight="48"
+                        onAction="#onComprarClick"/>
+                <Button fx:id="btnContactar" text="Solicitar Información" styleClass="btn-tour"
+                        maxWidth="Infinity" prefHeight="48"
+                        onAction="#onContactarClick"/>
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>

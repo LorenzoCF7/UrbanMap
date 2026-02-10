@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.urbanmap.controlador.MainController"
+      styleClass="app-root"
+      stylesheets="@mainView.css">
+
+    <!-- ═══════════════ NAVBAR (include existente) ═══════════════ -->
+    <fx:include source="navBar.fxml"/>
+
+    <!-- ═══════════════ MAIN AREA ═══════════════ -->
+    <VBox HBox.hgrow="ALWAYS" styleClass="main-area">
+
+        <!-- ──── TOP BAR: Search + Filter pills + Sort ──── -->
+        <HBox alignment="CENTER_LEFT" spacing="14" styleClass="top-bar">
+            <TextField fx:id="txtBuscar" promptText="🔍  Buscar propiedad, ciudad o código..."
+                       styleClass="search-field" HBox.hgrow="ALWAYS" maxWidth="380"/>
+
+            <HBox spacing="8" styleClass="filter-pills">
+                <ToggleButton fx:id="pillVenta" text="En Venta" selected="true" styleClass="pill pill-active"
+                              onAction="#onFiltroClick">
+                    <toggleGroup><ToggleGroup fx:id="pillGroup"/></toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="pillTodas" text="Todas" styleClass="pill"
+                              onAction="#onFiltroClick">
+                    <toggleGroup><fx:reference source="pillGroup"/></toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="pillCasa" text="Casa" styleClass="pill"
+                              onAction="#onFiltroClick">
+                    <toggleGroup><fx:reference source="pillGroup"/></toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="pillPiso" text="Piso" styleClass="pill"
+                              onAction="#onFiltroClick">
+                    <toggleGroup><fx:reference source="pillGroup"/></toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="pillLocal" text="Local" styleClass="pill"
+                              onAction="#onFiltroClick">
+                    <toggleGroup><fx:reference source="pillGroup"/></toggleGroup>
+                </ToggleButton>
+            </HBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Label text="ORDENAR:" styleClass="sort-label"/>
+                <ComboBox fx:id="cmbOrdenar" styleClass="sort-combo" prefWidth="170"/>
+            </HBox>
+        </HBox>
+
+        <!-- ──── BODY: Filter Sidebar + Content ──── -->
+        <HBox VBox.vgrow="ALWAYS">
+
+            <!-- ──── LEFT FILTER PANEL ──── -->
+            <VBox prefWidth="220" minWidth="220" maxWidth="220" styleClass="filter-panel">
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                            styleClass="filter-scroll" VBox.vgrow="ALWAYS">
+                    <VBox spacing="22" styleClass="filter-content">
+                        <padding><Insets top="20" right="18" bottom="20" left="18"/></padding>
+
+                        <!-- Header -->
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="Filtros" styleClass="filter-header"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Button text="Limpiar" styleClass="reset-btn" onAction="#onResetFiltros"/>
+                        </HBox>
+
+                        <!-- PRICE RANGE -->
+                        <VBox spacing="8">
+                            <Label text="RANGO DE PRECIO" styleClass="filter-section-title"/>
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <VBox spacing="3" HBox.hgrow="ALWAYS">
+                                    <Label text="Min" styleClass="filter-input-label"/>
+                                    <TextField fx:id="txtPrecioMin" promptText="0"
+                                               styleClass="filter-input"/>
+                                </VBox>
+                                <VBox spacing="3" HBox.hgrow="ALWAYS">
+                                    <Label text="Max" styleClass="filter-input-label"/>
+                                    <TextField fx:id="txtPrecioMax" promptText="Sin límite"
+                                               styleClass="filter-input"/>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                        <!-- TIPO PROPIEDAD -->
+                        <VBox spacing="8">
+                            <Label text="TIPO DE PROPIEDAD" styleClass="filter-section-title"/>
+                            <CheckBox fx:id="chkCasa" text="Casa" styleClass="filter-check"/>
+                            <CheckBox fx:id="chkPiso" text="Piso" styleClass="filter-check"/>
+                            <CheckBox fx:id="chkLocal" text="Local Comercial" styleClass="filter-check"/>
+                        </VBox>
+
+                        <!-- CARACTERÍSTICAS -->
+                        <VBox spacing="8">
+                            <Label text="CARACTERÍSTICAS" styleClass="filter-section-title"/>
+                            <CheckBox fx:id="chkJardin" text="Jardín" styleClass="filter-check"/>
+                            <CheckBox fx:id="chkGaraje" text="Garaje" styleClass="filter-check"/>
+                            <CheckBox fx:id="chkAscensor" text="Ascensor" styleClass="filter-check"/>
+                            <CheckBox fx:id="chkAlmacen" text="Almacén" styleClass="filter-check"/>
+                        </VBox>
+
+                        <!-- DISPONIBILIDAD -->
+                        <VBox spacing="8">
+                            <Label text="DISPONIBILIDAD" styleClass="filter-section-title"/>
+                            <HBox spacing="6">
+                                <ToggleButton fx:id="btnDispTodas" text="Todas" selected="true" styleClass="bedroom-btn"
+                                              onAction="#onFiltroClick">
+                                    <toggleGroup><ToggleGroup fx:id="disponibilidadGroup"/></toggleGroup>
+                                </ToggleButton>
+                                <ToggleButton fx:id="btnDisponibles" text="Disponible" styleClass="bedroom-btn"
+                                              onAction="#onFiltroClick">
+                                    <toggleGroup><fx:reference source="disponibilidadGroup"/></toggleGroup>
+                                </ToggleButton>
+                                <ToggleButton fx:id="btnVendidas" text="Vendido" styleClass="bedroom-btn"
+                                              onAction="#onFiltroClick">
+                                    <toggleGroup><fx:reference source="disponibilidadGroup"/></toggleGroup>
+                                </ToggleButton>
+                            </HBox>
+                        </VBox>
+
+                    </VBox>
+                </ScrollPane>
+
+                <!-- Apply button fixed at bottom -->
+                <VBox styleClass="filter-apply-box">
+                    <Button text="Aplicar Filtros" styleClass="apply-btn" maxWidth="Infinity"
+                            onAction="#onAplicarFiltros"/>
+                </VBox>
+            </VBox>
+
+            <!-- ──── RIGHT: PROPERTY GRID ──── -->
+            <StackPane fx:id="contentArea" HBox.hgrow="ALWAYS" styleClass="content-area"/>
+
+        </HBox>
+    </VBox>
+</HBox>
