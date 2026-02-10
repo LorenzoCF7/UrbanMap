@@ -9,8 +9,7 @@
 <VBox xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       prefWidth="260" minWidth="260" maxWidth="260"
-      styleClass="sidebar"
-      >
+      styleClass="sidebar">
 
     <!-- Top: Logo -->
     <HBox spacing="12" alignment="CENTER_LEFT" styleClass="sidebar-header">
@@ -33,7 +32,7 @@
     </HBox>
 
     <!-- Menu -->
-    <VBox spacing="6" styleClass="menu">
+    <VBox spacing="8" styleClass="menu">
 
         <!-- Dashboard (selected) -->
         <ToggleButton text="Dashboard" selected="true" styleClass="nav-item nav-item-selected">
@@ -104,10 +103,10 @@
     </VBox>
 
     <!-- Spacer -->
-    <Region VBox.vgrow="ALWAYS"/>
+    <Region VBox.vgrow="ALWAYS" minHeight="20"/>
 
     <!-- Upgrade card -->
-    <VBox spacing="10" styleClass="upgrade-card">
+    <VBox spacing="12" styleClass="upgrade-card">
         <Label text="UPGRADE PLAN" styleClass="upgrade-title"/>
         <Label text="Get unlimited property&#10;listings" styleClass="upgrade-text" wrapText="true"/>
         <Button text="Go Pro" styleClass="upgrade-button" maxWidth="Infinity"/>

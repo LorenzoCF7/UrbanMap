@@ -1,45 +1,71 @@
 /* Contenedor principal */
 .sidebar {
     background-color: #ffffff;
-    padding: 18 18 18 18;
-    -fx-spacing: 18;
+    -fx-padding: 20 18 20 18;
+    -fx-spacing: 20;
     border-color: transparent transparent transparent #1d6cff; /* línea azul izquierda */
-    border-width: 0 0 0 3;
+    -fx-border-width: 0 0 0 3;
+    -fx-fill-height: true;
+    -fx-pref-width: 260;
+    -fx-min-width: 260;
+    -fx-max-width: 260;
+    -fx-grow-priority: never;
 }
 
 /* Header */
-.sidebar-header { padding: 4 0 6 0; }
+.sidebar-header { 
+    -fx-padding: 4 0 10 0;
+    -fx-spacing: 16;
+}
 
 .app-icon {
     background-color: #1d6cff;
     -fx-background-radius: 12;
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-pref-width: 44;
+    -fx-pref-height: 44;
 }
 .app-icon-glyph {
     fill: white;
-    -fx-scale-x: 1.1;
-    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
 }
 
-.brand-title { font-size: 18px; font-weight: 700; fill: #1f2937; }
-.brand-title-accent { font-size: 18px; font-weight: 700; fill: #1d6cff; }
+.brand-title { 
+    -fx-font-size: 18px; 
+    -fx-font-weight: 700; 
+    -fx-fill: #1f2937; 
+}
+.brand-title-accent { 
+    -fx-font-size: 18px; 
+    -fx-font-weight: 700; 
+    -fx-fill: #1d6cff; 
+}
 
 /* Menú */
-.menu { padding: 10 0 0 0; }
+.menu { 
+    -fx-padding: 10 0 0 0;
+    -fx-spacing: 10;
+}
 
 .nav-item {
-    background-color: transparent;
-    padding: 10 12 10 12;
+    -fx-background-color: transparent;
+    -fx-padding: 12 14 12 14;
     -fx-background-radius: 10;
     -fx-alignment: CENTER_LEFT;
     -fx-content-display: LEFT;
-    -fx-graphic-text-gap: 12;
-    font-size: 13.5px;
+    -fx-graphic-text-gap: 14;
+    -fx-font-size: 14px;
     -fx-text-fill: #7b8794;
-    cursor: hand;
+    -fx-cursor: hand;
+    -fx-max-width: Infinity;
 }
 
 .nav-icon {
-    fill: #7b8794;
+    -fx-fill: #7b8794;
+    -fx-min-width: 24;
+    -fx-min-height: 24;
 }
 
 /* Seleccionado */
@@ -54,39 +80,59 @@
 
 /* Tarjeta upgrade */
 .upgrade-card {
-    background-color: #f2f7ff;
+    -fx-background-color: #f2f7ff;
     -fx-background-radius: 14;
-    padding: 14;
+    -fx-padding: 16;
+    -fx-spacing: 10;
     -fx-effect: dropshadow(gaussian, rgba(31,41,55,0.10), 14, 0.2, 0, 6);
 }
 
 .upgrade-title {
-    font-size: 11px;
-    font-weight: 800;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
     -fx-text-fill: #1d6cff;
 }
 
 .upgrade-text {
-    font-size: 12.5px;
+    -fx-font-size: 12.5px;
     -fx-text-fill: #6b7280;
+    -fx-wrap-text: true;
 }
 
 .upgrade-button {
-    background-color: #1d6cff;
+    -fx-background-color: #1d6cff;
     -fx-text-fill: white;
-    font-weight: 700;
+    -fx-font-weight: 700;
     -fx-background-radius: 10;
-    padding: 10 12 10 12;
+    -fx-padding: 10 16 10 16;
+    -fx-max-width: Infinity;
+    -fx-cursor: hand;
 }
 
 /* Usuario */
-.user-box { padding: 10 2 4 2; }
+.user-box { 
+    -fx-padding: 12 4 8 4;
+    -fx-spacing: 12;
+}
 
 .avatar {
-    background-color: #f6b08a;
+    -fx-background-color: #f6b08a;
     -fx-background-radius: 999;
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-pref-width: 44;
+    -fx-pref-height: 44;
 }
-.avatar-glyph { fill: rgba(255,255,255,0.85); }
+.avatar-glyph { 
+    -fx-fill: rgba(255,255,255,0.85);
+}
 
-.user-name { font-size: 13px; font-weight: 700; -fx-text-fill: #1f2937; }
-.user-subtitle { font-size: 12px; -fx-text-fill: #9aa5b1; }
+.user-name { 
+    -fx-font-size: 13px; 
+    -fx-font-weight: 700; 
+    -fx-text-fill: #1f2937; 
+}
+.user-subtitle { 
+    -fx-font-size: 12px; 
+    -fx-text-fill: #9aa5b1; 
+}
