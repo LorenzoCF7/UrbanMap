@@ -1,69 +1,75 @@
 package org.example.urbanmap.modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Modelo que representa un usuario del sistema.
+ * Corresponde a la tabla 'usuario' de la base de datos.
+ */
 public class Usuario {
+
     private int idUsuario;
     private String nombreUsuario;
-    private String contraseña;
-    private boolean admin;
-    
-    // Constructor vacío
+    private String contrasena;
+    private boolean usuAdmin;
+    private List<Compra> compras;
+
     public Usuario() {
+        this.compras = new ArrayList<>();
     }
-    
-    // Constructor completo
-    public Usuario(int idUsuario, String nombreUsuario, String contraseña, boolean admin) {
+
+    public Usuario(int idUsuario, String nombreUsuario, String contrasena, boolean usuAdmin) {
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
-        this.contraseña = contraseña;
-        this.admin = admin;
+        this.contrasena = contrasena;
+        this.usuAdmin = usuAdmin;
+        this.compras = new ArrayList<>();
     }
-    
-    // Constructor sin ID (para inserciones)
-    public Usuario(String nombreUsuario, String contraseña, boolean admin) {
-        this.nombreUsuario = nombreUsuario;
-        this.contraseña = contraseña;
-        this.admin = admin;
-    }
-    
-    // Getters y Setters
+
     public int getIdUsuario() {
         return idUsuario;
     }
-    
+
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
-    
+
     public String getNombreUsuario() {
         return nombreUsuario;
     }
-    
+
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
-    
-    public String getContraseña() {
-        return contraseña;
+
+    public String getContrasena() {
+        return contrasena;
     }
-    
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
-    
-    public boolean isAdmin() {
-        return admin;
+
+    public boolean isUsuAdmin() {
+        return usuAdmin;
     }
-    
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
+
+    public void setUsuAdmin(boolean usuAdmin) {
+        this.usuAdmin = usuAdmin;
     }
-    
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
+
     @Override
     public String toString() {
-        return "Usuario{" +
-                "idUsuario=" + idUsuario +
-                ", nombreUsuario='" + nombreUsuario + '\'' +
-                ", admin=" + admin +
-                '}';
+        return String.format("Usuario[id=%d, nombre='%s', admin=%s]",
+                idUsuario, nombreUsuario, usuAdmin ? "Sí" : "No");
     }
 }

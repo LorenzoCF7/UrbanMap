@@ -11,7 +11,11 @@ module org.example.urbanmap {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
 
     opens org.example.urbanmap to javafx.fxml;
+    opens org.example.urbanmap.controlador to javafx.fxml;
     exports org.example.urbanmap;
+    exports org.example.urbanmap.modelo;
+    exports org.example.urbanmap.controlador;
 }
