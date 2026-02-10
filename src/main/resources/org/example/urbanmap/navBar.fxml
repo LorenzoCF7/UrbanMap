@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      prefWidth="260" minWidth="260" maxWidth="260"
+      styleClass="sidebar"
+      stylesheets="@/css/navBar.css"
+      >
+
+    <!-- Top: Logo -->
+    <HBox spacing="12" alignment="CENTER_LEFT" styleClass="sidebar-header">
+        <StackPane prefWidth="44" prefHeight="44" minWidth="44" minHeight="44" styleClass="app-icon">
+            <!-- "calculator/building" icon simple -->
+            <SVGPath styleClass="app-icon-glyph"
+                     content="M7 6 H17 V18 H7 Z
+                              M9 8 H15 V10 H9 Z
+                              M9 11 H11 V13 H9 Z
+                              M12 11 H14 V13 H12 Z
+                              M9 14 H11 V16 H9 Z
+                              M12 14 H14 V16 H12 Z"
+            />
+        </StackPane>
+
+        <TextFlow>
+            <Text text="Estate" styleClass="brand-title"/>
+            <Text text="Flow" styleClass="brand-title-accent"/>
+        </TextFlow>
+    </HBox>
+
+    <!-- Menu -->
+    <VBox spacing="6" styleClass="menu">
+
+        <!-- Dashboard (selected) -->
+        <ToggleButton text="Dashboard" selected="true" styleClass="nav-item nav-item-selected">
+            <toggleGroup>
+                <ToggleGroup fx:id="navGroup"/>
+            </toggleGroup>
+            <graphic>
+                <SVGPath styleClass="nav-icon nav-icon-selected"
+                         content="M4 4 H11 V11 H4 Z
+                                  M13 4 H20 V9 H13 Z
+                                  M13 11 H20 V20 H13 Z
+                                  M4 13 H11 V20 H4 Z"/>
+            </graphic>
+        </ToggleButton>
+
+        <!-- Browse -->
+        <ToggleButton text="Browse" styleClass="nav-item">
+            <toggleGroup>
+                <fx:reference source="navGroup"/>
+            </toggleGroup>
+            <graphic>
+                <SVGPath styleClass="nav-icon"
+                         content="M10 4 A6 6 0 1 0 10 16 A6 6 0 1 0 10 4
+                                  M14.5 14.5 L20 20"/>
+            </graphic>
+        </ToggleButton>
+
+        <!-- Saved -->
+        <ToggleButton text="Saved" styleClass="nav-item">
+            <toggleGroup>
+                <fx:reference source="navGroup"/>
+            </toggleGroup>
+            <graphic>
+                <SVGPath styleClass="nav-icon"
+                         content="M12 20 C12 20 4 14.5 4 9.5
+                                  C4 6.5 6.2 4.5 9 4.5
+                                  C10.6 4.5 11.6 5.2 12 5.8
+                                  C12.4 5.2 13.4 4.5 15 4.5
+                                  C17.8 4.5 20 6.5 20 9.5
+                                  C20 14.5 12 20 12 20 Z"/>
+            </graphic>
+        </ToggleButton>
+
+        <!-- Messages -->
+        <ToggleButton text="Messages" styleClass="nav-item">
+            <toggleGroup>
+                <fx:reference source="navGroup"/>
+            </toggleGroup>
+            <graphic>
+                <SVGPath styleClass="nav-icon"
+                         content="M4 6 H20 V16 H4 Z
+                                  M4 6 L12 12 L20 6"/>
+            </graphic>
+        </ToggleButton>
+
+        <!-- Settings -->
+        <ToggleButton text="Settings" styleClass="nav-item">
+            <toggleGroup>
+                <fx:reference source="navGroup"/>
+            </toggleGroup>
+            <graphic>
+                <SVGPath styleClass="nav-icon"
+                         content="M12 8 A4 4 0 1 0 12 16 A4 4 0 1 0 12 8
+                                  M12 2 L13.2 4.8 L16.2 5.4 L14.4 7.8 L14.9 10.8 L12 9.4 L9.1 10.8 L9.6 7.8 L7.8 5.4 L10.8 4.8 Z"/>
+            </graphic>
+        </ToggleButton>
+
+    </VBox>
+
+    <!-- Spacer -->
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <!-- Upgrade card -->
+    <VBox spacing="10" styleClass="upgrade-card">
+        <Label text="UPGRADE PLAN" styleClass="upgrade-title"/>
+        <Label text="Get unlimited property&#10;listings" styleClass="upgrade-text" wrapText="true"/>
+        <Button text="Go Pro" styleClass="upgrade-button" maxWidth="Infinity"/>
+    </VBox>
+
+    <!-- User -->
+    <HBox spacing="12" alignment="CENTER_LEFT" styleClass="user-box">
+        <StackPane prefWidth="44" prefHeight="44" minWidth="44" minHeight="44" styleClass="avatar">
+            <SVGPath styleClass="avatar-glyph"
+                     content="M9 6 H15 V18 H9 Z
+                              M10.5 8 H13.5 V9.5 H10.5 Z"/>
+        </StackPane>
+
+        <VBox spacing="2">
+            <Label text="Alex Johnson" styleClass="user-name"/>
+            <Label text="Premium User" styleClass="user-subtitle"/>
+        </VBox>
+    </HBox>
+
+</VBox>
