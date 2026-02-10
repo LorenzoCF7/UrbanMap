@@ -7,8 +7,7 @@
 <HBox xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="org.example.urbanmap.controlador.MainController"
-      styleClass="app-root"
-      stylesheets="@mainView.css">
+      styleClass="app-root">
 
     <!-- ═══════════════ NAVBAR (include existente) ═══════════════ -->
     <fx:include source="navBar.fxml"/>

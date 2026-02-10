@@ -15,6 +15,12 @@ public class HelloApplication extends Application {
         
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 780);
+        
+        // Cargar todos los CSS necesarios
+        scene.getStylesheets().add(HelloApplication.class.getResource("navBar.css").toExternalForm());
+        scene.getStylesheets().add(HelloApplication.class.getResource("mainView.css").toExternalForm());
+        scene.getStylesheets().add(HelloApplication.class.getResource("propertyDetail.css").toExternalForm());
+        
         stage.setTitle("UrbanMap");
         stage.setMinWidth(900);
         stage.setMinHeight(600);
