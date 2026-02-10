@@ -1,5 +1,6 @@
 package org.example.urbanmap.controlador;
 
+import org.example.urbanmap.ConexionBD;
 import org.example.urbanmap.modelo.Compra;
 
 import java.sql.*;
@@ -15,7 +16,7 @@ public class CompraController {
     private final Connection connection;
 
     public CompraController() {
-        this.connection = DatabaseConnection.getInstance().getConnection();
+        this.connection = ConexionBD.getConexion();
     }
 
     /**

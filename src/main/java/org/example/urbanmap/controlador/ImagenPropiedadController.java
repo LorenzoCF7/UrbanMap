@@ -1,5 +1,6 @@
 package org.example.urbanmap.controlador;
 
+import org.example.urbanmap.ConexionBD;
 import org.example.urbanmap.modelo.ImagenPropiedad;
 
 import java.sql.*;
@@ -14,7 +15,7 @@ public class ImagenPropiedadController {
     private final Connection connection;
 
     public ImagenPropiedadController() {
-        this.connection = DatabaseConnection.getInstance().getConnection();
+        this.connection = ConexionBD.getConexion();
     }
 
     /**

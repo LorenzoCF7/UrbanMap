@@ -1,5 +1,6 @@
 package org.example.urbanmap.controlador;
 
+import org.example.urbanmap.ConexionBD;
 import org.example.urbanmap.modelo.*;
 
 import java.sql.*;
@@ -20,7 +21,7 @@ public class PropiedadController {
     private static final int TIPO_LOCAL = 3;
 
     public PropiedadController() {
-        this.connection = DatabaseConnection.getInstance().getConnection();
+        this.connection = ConexionBD.getConexion();
     }
 
     /**

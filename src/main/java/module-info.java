@@ -1,8 +1,9 @@
 module org.example.urbanmap {
-    requires javafx.controls;
+    requires transitive javafx.controls;
     requires javafx.fxml;
-    requires javafx.web;
-    requires java.sql;
+    requires transitive javafx.web;
+    requires transitive javafx.graphics;
+    requires transitive java.sql;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
@@ -11,7 +12,6 @@ module org.example.urbanmap {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
-    requires java.sql;
 
     opens org.example.urbanmap to javafx.fxml;
     opens org.example.urbanmap.controlador to javafx.fxml;
